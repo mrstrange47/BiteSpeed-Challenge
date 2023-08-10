@@ -54,9 +54,8 @@ public class ContactService {
 
         List<Contact> ListOfContacts = new ArrayList<>();
 
-        //::::::::::::::::::: Request null handling:::::::::::::::::::::::::::::::::::::::
+        //::::::::::::::::::: Request handling:::::::::::::::::::::::::::::::::::::::
 
-        //:::::::new code start::::::::::::::
 
         //Case 1 => email null
         if(email == null){
@@ -70,8 +69,9 @@ public class ContactService {
 
         //Case 3 => email and phone both exits
         else{
-            List<Contact> temp = contactRepository.getContactsByEmailAndNumber(email,phoneNumber);
-            if(temp.size()==0){
+            List<Contact> temp1 = contactRepository.getContactsByEmail(email);
+            List<Contact> temp2 = contactRepository.getContactsByNumber(phoneNumber);
+            if(temp1.size()==0 || temp2.size()==0){
                 Contact tempContact = createContact(email,phoneNumber);
             }
 
@@ -95,9 +95,6 @@ public class ContactService {
         //get response
 
         IdentifyResponse response = getResponse(reOrderedContacts);
-
-        //:::::::::::end::::::::::::::
-
 
         return response;
     }
