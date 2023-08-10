@@ -17,13 +17,13 @@ public class BackendApplication {
 	@Bean
 	public CommandLineRunner initialCreate(ContactService contactService) {
 		return (args) -> {
-			Contact contact1 = new Contact("123456","lorraine@hillvalley.edu",null,"primary","2023-04-01 00:00:00"
-					,"2023-04-01 00:00:00", null);
-			contactService.addContact(contact1);
-
-			Contact contact2 = new Contact("123456","mcfly@hillvalley.edu",1,"secondary","2023-04-20 05:30:00"
-					,"2023-04-01 00:00:00", null);
-			contactService.addContact(contact2);
+//			Contact contact1 = new Contact("123456","lorraine@hillvalley.edu",null,"primary","2023-04-01 00:00:00"
+//					,"2023-04-01 00:00:00", null);
+//			contactService.addContact(contact1);
+//
+//			Contact contact2 = new Contact("123456","mcfly@hillvalley.edu",1,"secondary","2023-04-20 05:30:00"
+//					,"2023-04-01 00:00:00", null);
+//			contactService.addContact(contact2);
 
 			//Example 2
 //			Contact contact3 = new Contact("919191","george@hillvalley.edu",null,"primary","2023-04-11 00:00:00"
